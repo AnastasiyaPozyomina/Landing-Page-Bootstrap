@@ -48,7 +48,7 @@ h2 {
 /* header */
 
 .header {
-  background-image: url('/img/man-working-at-home-on-laptop.jpg');
+  background-image: url('img/man-working-at-home-on-laptop.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
