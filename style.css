@@ -1,5 +1,12 @@
-﻿h2 {
-  color:#F97300;
+﻿body, html {
+  font-family: "Raleway";
+  font-size: 14px;
+  scroll-behavior: smooth;
+  // scroll-padding-bottom: 0.9s;
+}
+
+h2 {
+  color: #F97300;
 }
 
 
@@ -8,14 +15,20 @@
   background: #F97300;
 }
 
+
+
 .nav-link,
 .navbar-brand {
   color: #f4f4f4;
-  cursor: pointer;
+}
+
+.navbar-brand:active {
+  transform: scale(0.8);
 }
 
 .nav-link {
   margin-right: 1em !important;
+  font-size: 18px;
 }
 
 .nav-link:hover {
@@ -31,6 +44,7 @@
   background: #fff !important;
 }
 
+
 /* header */
 
 .header {
@@ -38,7 +52,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-
+  min-height: 100vh;
 }
 
 .overlay {
@@ -65,7 +79,8 @@
 
 .description p {
   color: #666;
-  font-size: 20px;
+  font-size: 20%;
+  font-size: 100%;
   width: 50%;
   line-height: 1.5;
 }
@@ -79,7 +94,7 @@
 /* about*/
 
 .about {
-  margin: 4em 0;
+  margin: 3em 0;
   padding: 1em;
   position: relative;
 
@@ -93,7 +108,7 @@
 .about img {
   height: 100%;
   width: 100%;
-  border-radius: 50%;
+  border-radius: 40%;
 }
 
 .about span {
@@ -120,77 +135,169 @@
 /*portfolio*/
 
 /*Portfolio*/
-.portfolio{
+.portfolio-wrapper {
   margin: 4em 0;
-  position: relative; 
- }
- .portfolio h2{
-  color:#F97300;
-  margin: 2em; 
- }
- .portfolio img{
-   height: 15rem;
-   width: 100%;
-   margin: 1em;
-   object-fit: cover;
- }
+  position: relative;
+}
+
+.portfolio-wrapper h2 {
+  color: #F97300;
+  margin: 2em;
+}
+
+.portfolio-wrapper img {
+  height: 14rem;
+  width: 100%;
+  margin: 1em;
+  object-fit: cover;
+  box-shadow: 0px 0 12px 8px rgba(0, 0, 0, .4);
+}
 
 /*blog*/
- .blog{
+.blog {
   margin: 4em 0;
-  position: relative; 
- }
- .blog h2{
- 
-  margin: 2em; 
- }
- .blog .card{
+  position: relative;
+}
+
+.blog h2 {
+
+  margin: 2em;
+}
+
+.blog .card {
   box-shadow: 0 0 20px #ccc;
- }
- .blog .card img{
+}
+
+.blog .card img {
   width: 100%;
   height: 12em;
- }
- .blog .card-title{
-  color:#F97300;
-   
- }
- .blog .card-body{
+}
+
+.blog .card-title {
+  color: #F97300;
+
+}
+
+.blog .card-body {
   padding: 1em;
- }
+}
 
- /*team*/
+/*team*/
 
- .team{
+.team {
   margin: 4em 0;
-  position: relative;  
- }
- .team h2{
-  margin: 2em; 
- }
- .team img{
-  width: 100%;
-  height: 15em;
-  object-fit: cover;
- }
- .team .item{
   position: relative;
- }
- .team .des{
+}
+
+.team h2 {
+  margin: 2em;
+}
+
+.team img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team .item {
+  position: relative;
+  height: 15em;
+}
+
+.team .item:hover::before {
+  content: url(' ');
+  position: absolute;
+  height: 100%;
+  width: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f973007d;
+  
+}
+
+
+.team .item:hover .des {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+top: 0;
+padding: 40%;
+  border-bottom-left-radius: 0;
+  font-size: 25px;
+  color: #fff;
+  transition: .5s linear;
+
+}
+
+/*форма обратной связи */
+.contact-form {
+  margin: 6em 0;
+  position: relative;
+}
+
+.contact-form h1 {
+  padding: 2em 1px;
+  color: #F97300;
+}
+
+.contact-form .right {
+  max-width: 600px;
+}
+
+.contact-form .right .btn-secondary {
   background: #F97300;
   color: #fff;
-  text-align: center;
-  transition:.5s ease-in-out;
-  opacity: 0.8;
-  
- }
+  border: 0;
+}
 
- .team .item:hover .des{
-  height: 100%;
-  background:#f973007d;
-  position: absolute;
-  width: 89%;
-  padding: 5em;
-  top: 0;
-  border-bottom-left-radius: 0;
- }
+.contact-form .right .form-control::placeholder {
+  color: #888;
+  font-size: 16px;
+}
+
+
+@media screen and (max-width: 400px) {
+  .description p {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about .desc {
+    border-left: none;
+  }
+
+  .about h3 {
+    margin-top: 2em;
+  }
+
+  .card {
+    margin-top: 1em;
+  
+  }
+
+  .item {
+    margin-bottom: 5em;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+.item {
+  margin-bottom: 4em;
+}
+}
+
+
+/*якоря*/
+#blog, #portfolio, #our-team, #contact {
+	border-top: 10px solid transparent;
+	margin-top: -10px;
+	padding: 15px; /* паддинги - без проблем */
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+
+
